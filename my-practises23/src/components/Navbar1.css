@@ -3,3 +3,7 @@
     padding-left: 0.5rem;
     margin-left: 60px;
 }
+
+.navbar-dark .navbar-nav .nav-link:active{
+    color: white;
+}

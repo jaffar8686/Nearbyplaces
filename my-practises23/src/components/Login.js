@@ -36,6 +36,8 @@ class Login extends React.Component {
       .then(res=>{
           console.log(res);
           console.log(res.data);
+          sessionStorage.setItem("Name",res.data);
+         
           //console.log(res.data.userId)
           //sessionStorage.setItem('userID', res.data.userId);
          

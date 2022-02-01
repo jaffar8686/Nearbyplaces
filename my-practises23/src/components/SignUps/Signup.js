@@ -1,5 +1,6 @@
 import React from 'react';
   //import '../styles/Signup.css';
+  import './Signup.css'
   //import '../styles/Login.css';
  import {withRouter}from "react-router-dom";
  import axios from 'axios';
@@ -112,11 +113,10 @@ class Signup extends React.Component {
         <>
      
         <div className="content">
+        <br/><br/>
         <center>
-        <div style ={{width:'350px'}} class="crd2">
-        
+        <div style ={{width:'350px'}} class="card2">
          <br/>
-        
         <center><h1 style={{fontSize:'25px',marginTop:'auto'}}>SIGN UP</h1></center>
        <br/>
         <form onSubmit={this.handleSubmit}>
@@ -189,6 +189,7 @@ class Signup extends React.Component {
         
       </div>
       </center>  
+      <br/><br/>
       </div>
       
      </>

@@ -44,8 +44,12 @@ export default function SearchBar(){
 
    const [rating, setRating] = useState(0) // initial rating value
 
+   var rates=[10,20,30,40,50,60,70,80,90,100]
    
+
    const handleRating = (rate: number) => {
+     console.log(rate);
+    
      setRating(rate)
     
    }
@@ -135,7 +139,7 @@ const displayLocation=()=>{
     
         
     }
-  })
+  },[states])
 
 return (
     <>
@@ -177,7 +181,7 @@ return (
       <div class="col-2"></div>
       <div class="col">
       
-      <div class="list-group" style={{ position: 'absolute',zIndex: 3}}>
+      <div class="list-group" style={{ position: 'absolute',zIndex: 30}}>
       {
           
 
@@ -196,7 +200,7 @@ return (
       </div>
       <br/>
       <div class="row">
-      <div class="col" style={{position:'relative', zIndex: -1}}>
+      <div class="col" style={{position:'relative', zIndex: 1}}>
       
 
         <MapContainer whenCreated={setMap} center={defaultCenter}  zoom={13} scrollWheelZoom={false}>
@@ -206,31 +210,31 @@ return (
             />
             <Marker position={[lat,lon]}  >
             <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
+             Current Location
             </Popup>
         </Marker>
         {
           
             category.map((value,index)=>{
               if (selectvalue=="Hotels"){
-              return  (<Marker position={[value.latitude,value.longitude]} icon={GetIcon(50,"hotel")}>
+              return  (<Marker position={[value.latitude,value.longitude]} icon={GetIcon(70,"h3")}>
               <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+               {value.name}
               </Popup>
                      </Marker>)
               }
               else if(selectvalue=="Restaurant"){
-                return  (<Marker position={[value.latitude,value.longitude]} icon={GetIcon(50,"cafe")}>
+                return  (<Marker position={[value.latitude,value.longitude]} icon={GetIcon(40,"cafe")}>
                   <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                   {value.name}
                   </Popup>
                          </Marker>)
 
               }
               else if(selectvalue=="EntertainmentPlaces"){
-                return  (<Marker position={[value.latitude,value.longitude]} icon={GetIcon(50,"popcorn")} >
+                return  (<Marker position={[value.latitude,value.longitude]} icon={GetIcon(40,"popcorn")} >
                   <Popup>
-                  A pretty CSS3 popup. <br /> Easily customizable.
+                  {value.name}
                   </Popup>
                          </Marker>)
 
@@ -261,7 +265,7 @@ return (
                 <img class="card-img-top" src={himg1[Math.floor(Math.random() * himg1.length)]} alt="Card image cap" width="200px" height="200px"/>
                 <div class="card-body">
                   <h5 class="card-title">{value.name}</h5>
-                  <Rating onClick={handleRating} ratingValue={rating} /* Available Props */ />
+                  <Rating onClick={handleRating} ratingValue={rates[Math.floor(Math.random() * rates.length)]} /* Available Props */ />
                   <br/>
                   <a href="#" class="btn btn-primary">Distance {value.distance}</a>
                 </div>
@@ -280,7 +284,7 @@ return (
                 <img class="card-img-top" src={rimg1[Math.floor(Math.random() * rimg1.length)]} alt="Card image cap" width="200px" height="200px" />
                 <div class="card-body">
                   <h5 class="card-title">{value.name}</h5>
-                  <Rating onClick={handleRating} ratingValue={rating} /* Available Props */ />
+                  <Rating onClick={handleRating} ratingValue={rates[Math.floor(Math.random() * rates.length)]} /* Available Props */ />
                   <br/>
                   <a href="#" class="btn btn-primary">Distance {value.distance}</a>
                 </div>
@@ -301,7 +305,7 @@ return (
                 <img class="card-img-top" src={eimg1[Math.floor(Math.random() * eimg1.length)]} alt="Card image cap"  width="200px" height="200px" />
                 <div class="card-body">
                   <h5 class="card-title">{value.name}</h5>
-                  <Rating onClick={handleRating} ratingValue={rating} /* Available Props */ />
+                  <Rating onClick={handleRating} ratingValue={rates[Math.floor(Math.random() * rates.length)]} /* Available Props */ />
                   <br/>
                   <a href="#" class="btn btn-primary">Distance {value.distance}</a>
                 </div>

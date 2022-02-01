@@ -3,7 +3,7 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Navbar1 from './components/Navbar1';
  import SearchBar from './components/Search';
-import  Signup  from './components/Signup';
+import  Signup  from './components/SignUps/Signup';
 import Login  from './components/Login';
 import Footer from './components/Footer';
 import Footer1 from './components/Footer1.js'

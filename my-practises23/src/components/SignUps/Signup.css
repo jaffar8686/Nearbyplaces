@@ -1,0 +1,28 @@
+ .crd21{
+    background-color:rgb(180, 247, 160);
+      width:500px;  
+     margin-left:100%; 
+    margin-right:10%;
+    height: 600px;
+border-radius:25px;
+}
+.content1{
+    background-image: url("./signup11.jpg");
+        background-repeat: no-repeat;
+        background-size: cover ;
+         border-radius: 0%; 
+         margin-top:0%;
+    } 
+.content {
+   background-image: url("./signup11.jpg");
+   background-repeat: no-repeat;
+   background-size: cover ;
+   border-radius: 0%; 
+}
+
+.card2{
+    background-color:rgb(180, 247, 160);
+    border-color: cornsilk;
+    border-style: solid;
+    border-radius:25px;
+}
